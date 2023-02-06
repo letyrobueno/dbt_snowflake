@@ -4,6 +4,7 @@ Based on https://courses.getdbt.com
 
 ## Set structure and load data in Snowflake
 
+``` sql
 -- 1. set structure
 create warehouse transforming;
 create database raw;
@@ -72,3 +73,4 @@ file_format = (
 select * from raw.jaffle_shop.customers;
 select * from raw.jaffle_shop.orders;
 select * from raw.stripe.payment;
+```
