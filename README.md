@@ -2,7 +2,7 @@
 
 Based on https://courses.getdbt.com
 
-## Set structure and load data in Snowflake
+## Setting structure and loading data into Snowflake
 
 ``` sql
 -- 1. set structure
@@ -74,3 +74,86 @@ select * from raw.jaffle_shop.customers;
 select * from raw.jaffle_shop.orders;
 select * from raw.stripe.payment;
 ```
+
+
+## Setting up a new dbt core project with Snowflake:
+Refer to: https://docs.getdbt.com/docs/get-started/getting-started-dbt-core		(the tutorial is using BigQuery tho)
+
+1. Create a Python virtual environment in the local machine:
+
+```bash
+	$ sudo apt-get install python3-pip 	# install pip first
+	$ sudo pip3 install virtualenv 		# now install virtualenv
+
+	$ virtualenv -p python3 myvenv 		# in Linux
+	$ python3 -m venv myvenv 			# in Mac
+```
+
+2. Activate/deactivate virtual environment:
+```bash
+	$ source myvenv/bin/activate
+
+	$ deactivate
+```
+
+
+3. Install dbt (according to the DB or data warehouse you'll be using):
+```bash
+	$ pip install dbt-snowflake
+```
+
+4. Create a new dbt project:
+```bash
+	$ dbt --version 			# to be sure dbt-core is installed
+
+	$ dbt init jaffle_shop
+
+	$ cd jaffle_shop
+```
+
+5. Set the profile file with the needed info about the data warehouse:
+```bash
+	$ mkdir ~/.dbt 				# if it doesn't exist yet
+	$ vi ~/.dbt/profiles.yml
+```
+
+Inside profiles.yml (to set Snowflake):
+
+```yml
+jaffle_shop:
+  outputs:
+    dev:
+      account: snowflake_account
+      database: dev
+      schema: jaffle_shop
+      type: snowflake
+      user: username
+      password: typed-password-here 
+      # or replace previous line with the next: 
+      authenticator: externalbrowser
+      warehouse: warehouse_name
+      threads: 8
+  target: dev
+```
+
+Then: 
+```bash
+  	$ dbt debug         # to test the connection
+```
+
+6. Some dbt commands to test:
+```bash
+	$ dbt run
+	$ dbt compile
+	$ dbt test
+	$ dbt docs generate # generate documentation (and lineage graph)
+	$ dbt docs serve 	# see documentation in the browser locally
+	$ dbt seed 			# if using seeds
+```
+7. Push changes to GitHub:
+```bash
+	$ git status
+	$ git add --update
+	$ git commit -m "feat: start a dbt project with snowflake"
+	$ git push
+  ```
