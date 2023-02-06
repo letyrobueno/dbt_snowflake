@@ -143,12 +143,15 @@ Then:
 
 6. Some dbt commands to test:
 ```bash
-	$ dbt run
-	$ dbt compile
+	$ dbt deps            # install dependencies listed in packages.yml
+	$ dbt run             # run the whole project
+	# or run only one model:
+	$ dbt run --select stg_payments 
+	$ dbt compile         # to compile analyses from Jinja-SQL to pure SQL
 	$ dbt test
-	$ dbt docs generate # generate documentation (and lineage graph)
-	$ dbt docs serve 	# see documentation in the browser locally
-	$ dbt seed 			# if using seeds
+	$ dbt docs generate   # generate documentation (and lineage graph)
+	$ dbt docs serve      # see documentation in the browser locally
+	$ dbt seed            # to build seed (csv file) into data warehouse 
 ```
 7. Push changes to GitHub:
 ```bash
@@ -157,3 +160,11 @@ Then:
 	$ git commit -m "feat: start a dbt project with snowflake"
 	$ git push
   ```
+
+## More:
+  - Jinja Template Designer documentation: https://jinja.palletsprojects.com/page/templates/
+  - dbt-project-evaluator: https://docs.getdbt.com/blog/align-with-dbt-project-evaluator
+  - Exposures: https://docs.getdbt.com/docs/build/exposures
+  - Metrics: https://docs.getdbt.com/docs/build/metrics
+  - Snapshots: https://docs.getdbt.com/docs/build/snapshots
+  - SQLFluff: https://github.com/sqlfluff/sqlfluff
