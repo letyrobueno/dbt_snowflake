@@ -152,7 +152,7 @@ Then:
 	$ dbt docs generate   # generate documentation (and lineage graph)
 	$ dbt docs serve      # see documentation in the browser locally
 	$ dbt seed            # to build seed (csv file) into data warehouse 
-  $ dbt snapshot        # to build snapshots
+	$ dbt snapshot        # to build snapshots
 ```
 7. Push changes to GitHub:
 ```bash
