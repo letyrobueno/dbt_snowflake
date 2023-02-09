@@ -82,11 +82,11 @@ Refer to: https://docs.getdbt.com/docs/get-started/getting-started-dbt-core		(th
 1. Create a Python virtual environment in the local machine:
 
 ```bash
-	$ sudo apt-get install python3-pip 	# install pip first
-	$ sudo pip3 install virtualenv 		# now install virtualenv
+	$ sudo apt-get install python3-pip  # install pip first
+	$ sudo pip3 install virtualenv      # now install virtualenv
 
-	$ virtualenv -p python3 myvenv 		# in Linux
-	$ python3 -m venv myvenv 			# in Mac
+	$ virtualenv -p python3 myvenv      # in Linux
+	$ python3 -m venv myvenv            # in Mac
 ```
 
 2. Activate/deactivate virtual environment:
@@ -138,7 +138,7 @@ jaffle_shop:
 
 Then: 
 ```bash
-  	$ dbt debug         # to test the connection
+	$ dbt debug           # to test the connection
 ```
 
 6. Some dbt commands to test:
@@ -152,6 +152,7 @@ Then:
 	$ dbt docs generate   # generate documentation (and lineage graph)
 	$ dbt docs serve      # see documentation in the browser locally
 	$ dbt seed            # to build seed (csv file) into data warehouse 
+  $ dbt snapshot        # to build snapshots
 ```
 7. Push changes to GitHub:
 ```bash
