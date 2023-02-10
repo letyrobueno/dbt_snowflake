@@ -6,4 +6,36 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
+        columns:
+          - name: id
+            description: Id of the customer.
+            tests:
+              - not_null
+          - name: first_name
+            description: First name of the customer.
+            tests:
+              - not_null
+          - name: last_name
+            description: Last name of the customer.
+            tests:
+              - not_null
+
       - name: orders
+        columns:
+          - name: id
+            description: Id of the order.
+            tests:
+              - not_null
+              - unique
+          - name: user_id
+            description: Id of the customer.
+            tests:
+              - not_null
+          - name: order_date
+            description: Order date creation.
+            tests:
+              - not_null
+          - name: status
+            description: Status of the order.
+            tests:
+              - not_null

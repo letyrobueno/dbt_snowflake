@@ -6,3 +6,29 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        columns:
+          - name: id
+            description: Id of the payment.
+            tests:
+              - not_null
+              - unique
+          - name: orderid
+            description: Id of the order.
+            tests:
+              - not_null
+          - name: paymentmethod
+            description: Method of the payment.
+            tests:
+              - not_null
+          - name: status
+            description: Status of the payment.
+            tests:
+              - not_null
+          - name: amount
+            description: Amount of the payment.
+            tests:
+              - not_null
+          - name: created
+            description: Payment creation date.
+            tests:
+              - not_null

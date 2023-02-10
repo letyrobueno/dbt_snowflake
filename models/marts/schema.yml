@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        description: Id of the order.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Id of the customer.
+        tests:
+          - not_null
+      - name: order_date
+        description: Order creation date.
+        tests:
+          - not_null
+      - name: amount
+        description: Order total amount.
+        tests:
+          - not_null
+
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        description: Id of the customer.
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.cardinality_equality:
+              field: customer_id
+              to: ref('stg_customers')
+      - name: first_name
+        description: First name of the customer.
+        tests:
+          - not_null
+      - name: last_name
+        description: Last name of the customer.
+        tests:
+          - not_null
+      - name: first_order_date
+        description: Date of the first order. Null if no orders were made yet.
+      - name: most_recent_order_date
+        description: Date of the most recente order.
+      - name: number_of_orders
+        description: Total number of orders.
+      - name: lifetime_value
+        description: Customer lifetime value.
+        # tests: 
+        #   - dollars_spent_greater_than_one:
+        #       group_by_column: customer_id

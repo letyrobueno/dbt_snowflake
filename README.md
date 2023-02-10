@@ -144,15 +144,16 @@ Then:
 6. Some dbt commands to test:
 ```bash
 	$ dbt deps            # install dependencies listed in packages.yml
-	$ dbt run             # run the whole project
-	# or run only one model:
-	$ dbt run --select stg_payments 
 	$ dbt compile         # to compile analyses from Jinja-SQL to pure SQL
+	$ dbt run             # run the whole project
+	$ dbt run --select stg_payments # or run only one model
+	$ dbt run --exclude stg_payments # or run everything but one model
 	$ dbt test
-	$ dbt docs generate   # generate documentation (and lineage graph)
-	$ dbt docs serve      # see documentation in the browser locally
 	$ dbt seed            # to build seed (csv file) into data warehouse 
 	$ dbt snapshot        # to build snapshots
+	$ dbt build           # At once runs the previous 4 commands: run, test, snapshot, seed
+	$ dbt docs generate   # generate documentation (and lineage graph)
+	$ dbt docs serve      # see documentation in the browser locally
 ```
 7. Push changes to GitHub:
 ```bash
