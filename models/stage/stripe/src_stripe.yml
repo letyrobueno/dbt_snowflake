@@ -11,7 +11,11 @@ sources:
             description: Id of the payment.
             tests:
               - not_null
-              - unique
+              - unique:
+                  config:
+                    severity: error
+                    error_if: ">100"
+                    warn_if: ">10"
           - name: orderid
             description: Id of the order.
             tests:
@@ -19,11 +23,19 @@ sources:
           - name: paymentmethod
             description: Method of the payment.
             tests:
-              - not_null
+              - accepted_values:
+                  values: ['credit_card', 'bank_transfer', 'gift_card', 'coupon']
+                  config:
+                    where: "status != 'fail'"
           - name: status
             description: Status of the payment.
             tests:
-              - not_null
+              - accepted_values:
+                  values: ['success', 'fail']
+                  config:
+                    limit: 10
+                    store_failures: true
+                    schema: abc_test
           - name: amount
             description: Amount of the payment.
             tests:
