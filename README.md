@@ -101,7 +101,10 @@ Refer to: https://docs.getdbt.com/docs/get-started/getting-started-dbt-core		(th
 ```bash
 	$ pip install dbt-snowflake
 ```
-
+or if there is a list of packages that need to be installed:
+```bash
+	$ pip install -r requirements.txt
+```
 4. Create a new dbt project:
 ```bash
 	$ dbt --version 			# to be sure dbt-core is installed
@@ -170,3 +173,4 @@ Then:
   - Metrics: https://docs.getdbt.com/docs/build/metrics
   - Snapshots: https://docs.getdbt.com/docs/build/snapshots
   - SQLFluff: https://github.com/sqlfluff/sqlfluff
+  - SQLFluff rules: https://docs.sqlfluff.com/en/stable/rules.html

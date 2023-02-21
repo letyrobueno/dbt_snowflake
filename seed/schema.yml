@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: employees
+    description: a manual map of employees to customers
+    columns:
+      - name: employee_id
+        description: Employee Id.
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: Email of the employee.
+      - name: customer_id
+        description: Customer Id.
