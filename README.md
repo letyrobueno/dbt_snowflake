@@ -144,19 +144,24 @@ Then:
 	$ dbt debug           # to test the connection
 ```
 
-6. Some dbt commands to test:
+6. Some dbt commands:
 ```bash
 	$ dbt deps            # install dependencies listed in packages.yml
 	$ dbt compile         # to compile analyses from Jinja-SQL to pure SQL
 	$ dbt run             # run the whole project
-	$ dbt run --select stg_payments # or run only one model
-	$ dbt run --exclude stg_payments # or run everything but one model
-	$ dbt test
+	$ dbt test            # execute tests for the whole project
 	$ dbt seed            # to build seed (csv file) into data warehouse 
 	$ dbt snapshot        # to build snapshots
 	$ dbt build           # At once runs the previous 4 commands: run, test, snapshot, seed
-	$ dbt docs generate   # generate documentation (and lineage graph)
+	$ dbt docs generate   # generate documentation (with lineage graph)
 	$ dbt docs serve      # see documentation in the browser locally
+
+	# Variations:
+	$ dbt run --select stg_payments  # run only one model
+	$ dbt run --exclude stg_payments # run everything but one model
+	$ dbt build --select tag:jaffle  # build, run, or test only a set of models with same tag
+	$ dbt build --exclude tag:jaffle # build, run, or test all models except a set of them with a certain tag
+	$ dbt run --select tag:jaffle --exclude tag:stripe # run all models tagged "daily", except those that are also tagged hourly
 ```
 7. Push changes to GitHub:
 ```bash
@@ -168,6 +173,8 @@ Then:
 
 ## More:
   - Jinja Template Designer documentation: https://jinja.palletsprojects.com/page/templates/
+  - dbt-utils: https://github.com/dbt-labs/dbt-utils
+  - dbt-expectations: https://github.com/calogica/dbt-expectations
   - dbt-project-evaluator: https://docs.getdbt.com/blog/align-with-dbt-project-evaluator
   - Exposures: https://docs.getdbt.com/docs/build/exposures
   - Metrics: https://docs.getdbt.com/docs/build/metrics

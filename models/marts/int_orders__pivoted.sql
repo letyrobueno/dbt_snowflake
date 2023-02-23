@@ -1,3 +1,7 @@
+{{ config(
+    tags=["stripe"]
+) }}
+
 {%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card'] -%}
 
 with 

@@ -1,3 +1,8 @@
+{{ config(
+    tags=["jaffle", "stripe"]
+) }}
+
+
 with 
 
 orders as  (

@@ -1,3 +1,7 @@
+{{ config(
+    tags=["jaffle"]
+) }}
+
 with 
 
 customers as (

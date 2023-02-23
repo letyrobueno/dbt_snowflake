@@ -17,9 +17,18 @@ clean-targets:
   - "dbt_modules"
 
 
+# Tags accumulate hierarchically
 models:
   jaffle_shop:
     stage:
       +materialized: view
+      jaffle_shop:
+        +tags: "jaffle"
+      stripe:
+        +tags: "stripe"
     marts:
       +materialized: table
+
+seeds:
+  jaffle_shop:
+      +tags: "jaffle"
