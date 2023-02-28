@@ -162,6 +162,9 @@ Then:
 	$ dbt build --select tag:jaffle  # build, run, or test only a set of models with same tag
 	$ dbt build --exclude tag:jaffle # build, run, or test all models except a set of them with a certain tag
 	$ dbt run --select tag:jaffle --exclude tag:stripe # run all models tagged "daily", except those that are also tagged hourly
+
+	# Check best practices use with dbt-project-evaluator:
+	$ dbt build --select package:dbt_project_evaluator
 ```
 7. Push changes to GitHub:
 ```bash
@@ -172,12 +175,13 @@ Then:
   ```
 
 ## More:
-  - Jinja Template Designer documentation: https://jinja.palletsprojects.com/page/templates/
-  - dbt-utils: https://github.com/dbt-labs/dbt-utils
-  - dbt-expectations: https://github.com/calogica/dbt-expectations
-  - dbt-project-evaluator: https://docs.getdbt.com/blog/align-with-dbt-project-evaluator
-  - Exposures: https://docs.getdbt.com/docs/build/exposures
   - Metrics: https://docs.getdbt.com/docs/build/metrics
+  - Exposures: https://docs.getdbt.com/docs/build/exposures
   - Snapshots: https://docs.getdbt.com/docs/build/snapshots
+  - Jinja Template Designer documentation: https://jinja.palletsprojects.com/page/templates/
+  - dbt-utils (set of macros for tests, SQL generators, and others): https://github.com/dbt-labs/dbt-utils
+  - dbt-audit-helper (to perform data audits): https://github.com/dbt-labs/dbt-audit-helper
+  - dbt-expectations (to add tests): https://github.com/calogica/dbt-expectations
+  - dbt-project-evaluator (check best practices): https://docs.getdbt.com/blog/align-with-dbt-project-evaluator
   - SQLFluff: https://github.com/sqlfluff/sqlfluff
   - SQLFluff rules: https://docs.sqlfluff.com/en/stable/rules.html
