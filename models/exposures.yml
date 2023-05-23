@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+
+  - name: weekly_jaffle_metrics
+    label: Jaffles by the Week
+    type: dashboard
+    maturity: high
+    url: https://github.com/letyrobueno/dbt_snowflake/tree/master/models
+    description: >
+      Growth analysis dashboard.
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('dim_customers')
+
+    owner:
+      name: Leticia
+      email: leticia@jaffleshop.com
