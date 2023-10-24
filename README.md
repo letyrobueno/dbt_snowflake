@@ -87,11 +87,19 @@ Refer to: https://docs.getdbt.com/docs/get-started/getting-started-dbt-core		(th
 
 	$ virtualenv -p python3 myvenv      # in Linux
 	$ python3 -m venv myvenv            # in Mac
+        $ virtualenv myvenv                 # in Windows
 ```
 
 2. Activate/deactivate virtual environment:
 ```bash
 	$ source myvenv/bin/activate
+
+	$ deactivate
+```
+
+In Windows:
+```bash
+	$ myvenv\Scripts\activate.bat
 
 	$ deactivate
 ```
