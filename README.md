@@ -209,10 +209,10 @@ Then:
 ID columns in our semantic models that serve as join keys to other semantic models.
 
 4 types of entities:
-- Primary
-- Unique
-- Foreign
-- Natural
+- **Primary:** only one record for each row and it includes every record in the data platform.
+- **Unique:** only one record per row in the table but it may have a subset of records in the data warehouse. It can include nulls.
+- **Foreign:** include zero, one, or multiple instances of the same record. It can include nulls.
+- **Natural:** column or combination of columns that uniquely identify a record.
 
 Each semantic model contains at most 1 primary or natural entity (like how a model has 1 primary key).
 
