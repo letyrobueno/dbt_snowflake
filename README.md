@@ -193,3 +193,41 @@ Then:
   - dbt-project-evaluator (check best practices): https://docs.getdbt.com/blog/align-with-dbt-project-evaluator
   - SQLFluff: https://github.com/sqlfluff/sqlfluff
   - SQLFluff rules: https://docs.sqlfluff.com/en/stable/rules.html
+
+## Review on Semantic Models:
+
+### Semantic models:
+
+- Where we define everything we need to construct our metrics.
+
+- Contain object types like entities, measures, and dimensions.
+
+- Semantic models are 1:1 with a dbt SQL or Python model.
+
+### Entities:
+
+ID columns in our semantic models that serve as join keys to other semantic models.
+
+4 types of entities:
+- Primary
+- Unique
+- Foreign
+- Natural
+
+Each semantic model contains at most 1 primary or natural entity (like how a model has 1 primary key).
+
+Each semantic model contains zero, one, or many foreign or unique entities used to connect to other entities.
+
+### Dimensions:
+
+- Help you group/filter your data.
+- They are columns in your models that contain categorical or time-related information.
+
+Two types of dimensions:
+- Categorical.
+- Time (Includes slowly changing dimensions).
+
+### Measures:
+
+- They are SQL aggregations performed on columns in your model.
+- A lot of the time, measures themselves can serve as metrics. Or, measures can serve as building blocks for more complicated metrics.
