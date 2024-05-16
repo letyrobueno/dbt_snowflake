@@ -236,7 +236,12 @@ Two types of dimensions:
 
 1. **Simple metrics:** directly reference a single measure, without any additional measures involved. Example:
 
-![image](https://github.com/letyrobueno/dbt_snowflake/assets/3430584/c68acff0-5774-417d-a1b9-5133c5c05e2c)
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/c68acff0-5774-417d-a1b9-5133c5c05e2c" width="450" height="180">
 
-![image](https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81dc5ad2-bca6-4c37-83aa-0b0062700c93)
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81dc5ad2-bca6-4c37-83aa-0b0062700c93" width="400" height="160">
 
+2. **Ratio metrics:**
+
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81de5619-b86a-47b0-bcfe-66fa997c9030" width="600" height="180">
+
+3. 
