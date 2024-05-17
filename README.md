@@ -240,8 +240,13 @@ Two types of dimensions:
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81dc5ad2-bca6-4c37-83aa-0b0062700c93" width="400" height="160">
 
-2. **Ratio metrics:**
+2. **Ratio metrics:** Creates a ratio between two metrics. Example:
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81de5619-b86a-47b0-bcfe-66fa997c9030" width="600" height="180">
 
-3. 
+3. **Cumulative metrics:** aggregate a measure over a given window (or over everything if no window is provided). Example:
+
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/b8be37ea-4610-4f2e-9cf0-c5d6a5e76418" width="580" height="250">
+
+
+4. 
