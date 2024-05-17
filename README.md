@@ -254,4 +254,7 @@ Two types of dimensions:
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/bb838e1e-b2ee-4bf1-aeaf-d3c5ffff9151" width="540" height="230">
 
+## Saved queries and exports:
+
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/b457e386-7041-437f-b020-6b1d8f6808ad" width="480" height="260">
 
