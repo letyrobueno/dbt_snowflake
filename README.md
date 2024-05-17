@@ -234,19 +234,24 @@ Two types of dimensions:
 
 ## Metrics:
 
-1. **Simple metrics:** directly reference a single measure, without any additional measures involved. Example:
+1. **Simple metrics:** directly reference a single measure, without any additional measures involved. **Example:**
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/c68acff0-5774-417d-a1b9-5133c5c05e2c" width="450" height="180">
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81dc5ad2-bca6-4c37-83aa-0b0062700c93" width="400" height="160">
 
-2. **Ratio metrics:** Creates a ratio between two metrics. Example:
+2. **Ratio metrics:** Creates a ratio between two metrics. **Example:**
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/81de5619-b86a-47b0-bcfe-66fa997c9030" width="600" height="180">
 
-3. **Cumulative metrics:** aggregate a measure over a given window (or over everything if no window is provided). Example:
+3. **Cumulative metrics:** aggregate a measure over a given window (or over everything if no window is provided). **Example:**
 
 <img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/b8be37ea-4610-4f2e-9cf0-c5d6a5e76418" width="580" height="250">
 
+4. **Derived metrics:** calculations on top of metrics. **Example:**
 
-4. 
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/54ec3d31-443b-427e-a53e-e65734ec031d" width="540" height="230">
+
+<img src="https://github.com/letyrobueno/dbt_snowflake/assets/3430584/bb838e1e-b2ee-4bf1-aeaf-d3c5ffff9151" width="540" height="230">
+
+
