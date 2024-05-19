@@ -37,3 +37,31 @@
 ❌ stg_[entity].sql 
 
 ✅ Plural. 
+
+### Intermediate: 
+
+**Purpose:** purpose-built transformation steps
+
+#### Folders:
+
+✅ Subdirectories based on business groupings.
+
+#### File names:
+
+✅ int_[entity]s_[verb]s.sql
+
+#### Models:
+
+❌ Exposed to end users. 
+
+✅ Materialized ephemerally. 
+
+✅ Materialized as views in a custom schema with special permissions. 
+
+#### Use cases:
+
+✅ Structural simplification.
+
+✅ Re-graining.
+
+✅ Isolating complex operations.
