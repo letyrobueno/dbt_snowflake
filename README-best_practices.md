@@ -2,7 +2,9 @@
 
 ### Staging:
 
-#### Purpose:
+**Purpose:** prepare atomic building blocks.
+
+#### Operations:
 
 ✅ Renaming
 
